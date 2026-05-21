@@ -1,0 +1,63 @@
+.wrap { display: flex; flex-direction: column; gap: 1.5rem; }
+.topBar { display: flex; align-items: center; justify-content: space-between; }
+.heading { font-family: var(--font-disp); font-size: 1.8rem; font-weight: 400; color: var(--dark); }
+.empty { color: var(--muted); }
+.emptyState { text-align: center; padding: 3rem; background: white; border-radius: var(--radius); border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; gap: 1rem; color: var(--muted); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+.card { background: white; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: box-shadow 0.2s; }
+.card:hover { box-shadow: var(--shadow); }
+.cardImg { aspect-ratio: 1/1; background: var(--bg2); position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.cardImg img { width: 100%; height: 100%; object-fit: cover; }
+.cardEmoji { font-size: 2.5rem; opacity: 0.3; }
+.badge { position: absolute; top: 8px; right: 8px; background: var(--pink-light); color: var(--pink-dark); padding: 2px 8px; border-radius: 20px; font-size: 0.62rem; font-weight: 700; }
+.cardBody { padding: 0.75rem; }
+.cat { font-size: 0.6rem; color: var(--gold-dark); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; }
+.name { font-family: var(--font-disp); font-size: 1rem; font-weight: 400; margin: 0.2rem 0; }
+.price { font-size: 0.9rem; color: var(--pink-dark); font-weight: 600; }
+.cardActions { display: flex; gap: 0; border-top: 1px solid var(--border); }
+.editBtn, .deleteBtn { flex: 1; padding: 0.6rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; cursor: pointer; }
+.editBtn { color: var(--muted); border-left: 1px solid var(--border); }
+.editBtn:hover { background: var(--bg2); color: var(--dark); }
+.deleteBtn { color: var(--muted); }
+.deleteBtn:hover { background: #fee2e2; color: #dc2626; }
+
+/* Modal */
+.backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 300; display: flex; align-items: center; justify-content: center; padding: 1rem; backdrop-filter: blur(4px); }
+.modal { background: white; border-radius: 16px; width: 100%; max-width: 560px; max-height: 90vh; overflow-y: auto; display: flex; flex-direction: column; animation: slideUp 0.3s ease; }
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.modalHead { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border); }
+.modalHead h3 { font-family: var(--font-disp); font-size: 1.4rem; font-weight: 400; }
+.closeBtn { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--muted); cursor: pointer; transition: all 0.2s; }
+.closeBtn:hover { background: var(--bg2); color: var(--dark); }
+.modalBody { padding: 1.5rem; display: flex; flex-direction: column; gap: 1.25rem; flex: 1; }
+.modalFoot { padding: 1.25rem 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: flex-end; gap: 0.75rem; }
+
+/* Image upload */
+.imgUpload { display: block; cursor: pointer; border: 2px dashed var(--border); border-radius: var(--radius); overflow: hidden; aspect-ratio: 16/7; transition: border-color 0.2s; }
+.imgUpload:hover { border-color: var(--pink); }
+.imgPreview { width: 100%; height: 100%; object-fit: cover; display: block; }
+.imgPlaceholder { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; color: var(--muted); font-size: 0.82rem; }
+
+/* Form */
+.formGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.formGroup { display: flex; flex-direction: column; gap: 0.35rem; }
+.formGroup label { font-size: 0.78rem; font-weight: 500; color: var(--dark); }
+.formGroup input, .formGroup select, .formGroup textarea {
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-family: var(--font-body);
+  color: var(--dark);
+  background: white;
+  transition: border-color 0.2s;
+  outline: none;
+  width: 100%;
+}
+.formGroup input:focus, .formGroup select:focus, .formGroup textarea:focus {
+  border-color: var(--pink);
+  box-shadow: 0 0 0 3px rgba(232,160,180,0.15);
+}
+.formGroup textarea { resize: vertical; }
+@media (max-width: 480px) { .formGrid { grid-template-columns: 1fr; } }

@@ -1,0 +1,75 @@
+.wrap { display: flex; flex-direction: column; gap: 2rem; }
+.heading {
+  font-family: var(--font-disp);
+  font-size: 1.8rem; font-weight: 400;
+  color: var(--dark);
+}
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+.statCard {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s;
+}
+.statCard:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.statIcon { font-size: 2rem; margin-bottom: 0.5rem; }
+.statVal {
+  font-family: var(--font-disp);
+  font-size: 2rem; font-weight: 400;
+  color: var(--pink-dark);
+}
+.statLabel { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; }
+
+.section { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+.subHeading {
+  font-family: var(--font-disp);
+  font-size: 1.3rem; font-weight: 400;
+  margin-bottom: 1rem;
+}
+.empty { color: var(--muted); font-size: 0.85rem; }
+.table { display: flex; flex-direction: column; }
+.tableHead {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+}
+.tableRow {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+}
+.tableRow:hover { background: var(--bg2); margin: 0 -0.5rem; padding: 0.85rem 0.5rem; }
+.tableRow:last-child { border-bottom: none; }
+.orderId { font-weight: 600; color: var(--pink-dark); }
+.date { color: var(--muted); font-size: 0.78rem; }
+.statusBadge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+@media (max-width: 640px) {
+  .tableHead, .tableRow { grid-template-columns: 1fr 1fr 1fr; }
+  .tableHead span:nth-child(4),
+  .tableHead span:nth-child(5),
+  .tableRow span:nth-child(4),
+  .tableRow span:nth-child(5) { display: none; }
+}

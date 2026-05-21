@@ -1,0 +1,16 @@
+.wrap { min-height: 70vh; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
+.card { background: white; border: 1px solid var(--border); border-radius: 20px; padding: 48px; max-width: 480px; width: 100%; text-align: center; box-shadow: var(--shadow-lg); animation: slideUp 0.5s both; }
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.icon { font-size: 3.5rem; color: #10b981; margin-bottom: 1rem; animation: pop 0.4s 0.2s both; }
+@keyframes pop { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.title { font-family: var(--font-disp); font-size: 2.5rem; color: var(--dark); margin-bottom: 0.6rem; }
+.sub { font-size: 0.92rem; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.6; }
+.orderId { display: inline-block; background: var(--gold-light); color: var(--gold-dark); padding: 8px 20px; border-radius: 40px; font-size: 0.82rem; margin-bottom: 1.75rem; }
+.steps { display: flex; flex-direction: column; gap: 14px; margin-bottom: 1.75rem; text-align: right; }
+.step { display: flex; align-items: center; gap: 14px; font-size: 0.88rem; color: var(--muted); }
+.stepDot { width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.72rem; flex-shrink: 0; }
+.stepActive { background: #10b981; border-color: #10b981; color: white; }
+.waMsg { font-size: 0.82rem; color: var(--muted); margin-bottom: 1rem; }
+.waBtn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 12px; background: #25d366; color: white; border-radius: 50px; font-weight: 600; font-family: var(--font-body); text-decoration: none; margin-bottom: 1.5rem; transition: all 0.3s; }
+.waBtn:hover { background: #1da851; transform: translateY(-2px); }
+.actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }

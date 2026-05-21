@@ -1,0 +1,26 @@
+.layout { display: flex; min-height: calc(100vh - 66px); }
+.sidebar { width: 240px; background: var(--dark); display: flex; flex-direction: column; padding: 0; flex-shrink: 0; transition: transform 0.3s; }
+.sideHead { display: flex; align-items: center; justify-content: space-between; padding: 24px 20px 16px; }
+.sideLogo { font-family: var(--font-disp); font-size: 1.3rem; font-weight: 400; color: #fff; }
+.sideLogo span { color: var(--gold); }
+.sideClose { display: none; color: rgba(255,255,255,0.6); cursor: pointer; padding: 4px; background: none; border: none; }
+.sideNav { display: flex; flex-direction: column; gap: 4px; padding: 12px; flex: 1; }
+.navLink { display: flex; align-items: center; gap: 12px; padding: 11px 14px; border-radius: 10px; font-size: 0.85rem; color: rgba(255,255,255,0.6); transition: all 0.3s; cursor: pointer; background: none; border: none; text-decoration: none; font-family: var(--font-body); }
+.navLink:hover { background: rgba(255,255,255,0.08); color: #fff; }
+.navActive { background: var(--gold) !important; color: #fff !important; }
+.logoutBtn { display: flex; align-items: center; gap: 10px; padding: 14px 24px; font-size: 0.82rem; color: rgba(255,255,255,0.4); cursor: pointer; border-top: 1px solid rgba(255,255,255,0.08); transition: color 0.3s; background: none; border-right: none; border-left: none; border-bottom: none; font-family: var(--font-body); font-weight: 500; }
+.logoutBtn:hover { color: #fff; }
+.main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.topBar { background: white; border-bottom: 1px solid var(--border); padding: 0 24px; height: 56px; display: flex; align-items: center; gap: 14px; }
+.menuBtn { display: none; color: var(--dark); cursor: pointer; padding: 4px; background: none; border: none; font-family: var(--font-body); }
+.topTitle { font-family: var(--font-disp); font-size: 1.2rem; color: var(--muted); font-weight: 400; }
+.content { flex: 1; padding: 28px; background: var(--bg); overflow-y: auto; }
+.overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 10; }
+@media (max-width: 768px) {
+  .sidebar { position: fixed; top: 56px; left: 0; bottom: 0; z-index: 20; transform: translateX(-100%); }
+  .sideOpen { transform: none; }
+  .sideClose { display: block; }
+  .menuBtn { display: flex; }
+  .overlay { display: block; }
+  .content { padding: 16px; }
+}

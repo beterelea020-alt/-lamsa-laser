@@ -1,0 +1,83 @@
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 18px 5%;
+  transition: all 0.3s ease;
+}
+.nav.scrolled {
+  background: rgba(255,248,251,0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(200,140,165,0.15);
+  padding: 12px 5%;
+}
+.inner {
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: 1200px; margin: 0 auto;
+}
+.logo {
+  font-family: var(--font-disp);
+  font-size: 1.9rem; font-weight: 400;
+  color: var(--pink-dark);
+  letter-spacing: 0.05em;
+}
+.links {
+  display: flex; gap: 2rem; list-style: none;
+}
+.links a {
+  font-size: 0.9rem; font-weight: 400; color: var(--muted);
+  transition: color 0.2s;
+  position: relative;
+}
+.links a::after {
+  content: ''; position: absolute; bottom: -4px; right: 0;
+  width: 0; height: 1.5px; background: var(--pink-dark);
+  transition: width 0.3s;
+}
+.links a:hover, .links a.active { color: var(--pink-dark); }
+.links a:hover::after, .links a.active::after { width: 100%; }
+
+.actions { display: flex; align-items: center; gap: 1rem; }
+.cartBtn {
+  position: relative; color: var(--dark); font-size: 1.1rem;
+  padding: 6px; display: flex; align-items: center;
+  transition: color 0.2s;
+}
+.cartBtn:hover { color: var(--pink-dark); }
+.badge {
+  position: absolute; top: -4px; left: -4px;
+  background: var(--pink-dark); color: white;
+  width: 18px; height: 18px; border-radius: 50%;
+  font-size: 0.65rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.hamburger {
+  display: none; background: none; border: none;
+  color: var(--dark); padding: 4px;
+}
+
+/* Drawer */
+.drawer {
+  position: fixed; top: 0; right: -100%; bottom: 0;
+  width: min(300px, 80vw);
+  background: var(--bg); z-index: 200;
+  padding: 5rem 2rem 2rem;
+  transition: right 0.3s ease;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.08);
+}
+.drawerOpen { right: 0; }
+.drawer ul { list-style: none; }
+.drawer li { border-bottom: 1px solid var(--border); }
+.drawer a {
+  display: block; padding: 1rem 0;
+  font-size: 1.1rem; color: var(--text);
+  transition: color 0.2s;
+}
+.drawer a:hover { color: var(--pink-dark); }
+.overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.3);
+  z-index: 190; backdrop-filter: blur(2px);
+}
+
+@media (max-width: 640px) {
+  .links { display: none; }
+  .hamburger { display: block; }
+}
